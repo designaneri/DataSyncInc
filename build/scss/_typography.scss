@@ -1,0 +1,203 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-transform: capitalize;
+    @media (min-width: 1200px) {
+      line-height: 1.5;
+    }
+}
+h1{
+    font-size: 3rem;
+    line-height: 1.2;
+    @media (min-width: 768px) {
+      font-size: 3.4rem;
+    }
+    @media (min-width: 992px) {
+      font-size: 3.8rem;
+    }
+    @media (min-width: 1200px) {
+      font-size: 4.2rem;
+    }
+}
+
+h2{
+    font-size: 2.8rem;
+    line-height: 1.2;
+    @media (min-width: 768px) {
+      font-size: 3.2rem;
+    }
+    @media (min-width: 992px) {
+      font-size: 3.6rem;
+    }
+    @media (min-width: 1200px) {
+      font-size: 4rem;
+    }
+}
+
+h3{
+    font-size: 2.0rem;
+    @media (min-width: 768px) {
+      font-size: 2.2rem;
+    }
+    @media (min-width: 992px) {
+      font-size: 2.4rem;
+    }
+    @media (min-width: 1200px) {
+      font-size: 2.8rem;
+    }
+}
+
+h4{
+    
+    font-size: 1.8rem;
+    @media (min-width: 992px) {
+      font-size: 2.2rem;
+    }
+    @media (min-width: 1200px) {
+      font-size: 2.4rem;
+    }
+}
+h5{
+    font-size: 1.6rem;
+    @media (min-width: 768px) {
+      font-size: 1.8rem;
+    }
+    @media (min-width: 992px) {
+      font-size: 2.0rem;
+    }
+}
+h6{
+    font-size: 1.4rem;
+    @media (min-width: 768px) {
+      font-size: 1.6rem;
+    }
+}
+p{
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 2.4rem;
+}
+a{
+  @include transition(all 0.3s);
+  display: inline-block;
+  color: $base-color;
+  text-decoration:none;
+  &.primary-color{
+    color: $primary-color;
+  }
+  &:hover,&:focus{
+      text-decoration:none;
+      outline: 0;
+      color:$primary-color;
+  }
+}
+
+.heading-wrap{
+  text-align: center;
+  .heading-text{
+    margin-bottom: 24px;
+    span{
+        color: $primary-color;
+        position: relative;
+      
+    }
+    i{
+      font-style: normal;
+    }
+    .has-underline{
+        position: relative;
+        &:after{
+            position: absolute;
+            content: '';
+            background-image: url(../../build/img/heading-vector.svg);
+            top: 100%;
+            width: 100%;
+            right: 0;
+            height: 13px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            @media (min-width: 768px) {
+              left: 50%;
+              margin-left: -79px;
+              background-size: initial;
+              width: 158px;
+            }
+      
+        }
+    }
+   
+  }
+  .subtxt{
+    color: $secondary-color;
+    margin-bottom: 35px;
+  }
+  p{
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+.grey-text{
+  color: $secondary-color;
+}
+.primary-text{
+  color: $primary-color;
+}
+.know-more-link,.read-more-link{
+  font-size: 16px;
+  position: relative;
+  &:after{
+    position: absolute;
+    width: 0;
+    content: "";
+    left: 0;
+    height: 1px;
+    background: $primary-color;
+    bottom: 2px;
+  }
+  i{
+    @include transition(all 0.3s);    
+    margin-left: 10px;
+    font-weight: 700;
+    color: $base-color;
+  }
+  &:hover{
+   &:after{
+    width: 80px;
+   }
+    i{
+      margin-left: 16px;
+      color: $primary-color;
+    }
+   
+  }
+}
+.read-more-link{
+  color: $primary-color;
+  &:after{
+    color: $base-color;
+  }
+  i{
+    @include transition(all 0.3s);    
+    color: $primary-color;
+  }
+  &:hover{
+    color: $base-color;
+    &:after{
+      width: 77px;
+    }
+    i{
+      color: $base-color;
+    }
+   
+  }
+}
+.font-normal{
+  font-weight: 400;
+}

@@ -1,0 +1,286 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  align-items: center;
+  padding: 10px 15px;
+  @media (min-width: 768px) {
+    padding: 0 20px;
+  }
+  @media (min-width: 992px) {
+    padding: 0 30px;
+  }
+  &.sticky-header{
+    background: $white;
+    box-shadow: 0px 2px 6px 0px rgba(29, 29, 29, 0.15);
+  }
+  .hamburger-icon {
+    z-index: 2;
+    position: static;
+    display: inline-block;
+    align-self: center;
+    width: 30px;
+    height: 20px;
+    margin-right: 1rem;
+    @media (min-width: 768px) {
+      display: none;
+    }
+    span {
+      top: 50%;
+      margin-top: -.2rem;
+      transition-timing-function: cubic-bezier(.55,.055,.675,.19);
+      transition-duration: 75ms;
+      position: relative;
+      width: 26px;
+      display: block;
+      height: 2px;
+      transition-timing-function: ease;
+      transition-duration: .15s;
+      transition-property: transform;
+      border-radius: 4px;
+      background-color: $base-color;
+      &::after,&::before{
+        position: absolute;
+        width: 100%;
+        content: "";
+        
+      display: block;
+      height: 2px;
+      transition-timing-function: ease;
+      transition-duration: .15s;
+      transition-property: transform;
+      border-radius: 4px;
+      background-color: $base-color;
+   
+      }
+      &:after {
+        transition: bottom 75ms ease .12s,transform 75ms cubic-bezier(.55,.055,.675,.19);
+        bottom: -8px
+      }
+      &:before {
+        transition: top 75ms ease .12s,opacity 75ms ease;
+        top: -8px
+      }
+    }
+    
+  }
+  .open &{
+      .hamburger-icon {
+        span {
+          transition-delay: .12s;
+          transition-timing-function: cubic-bezier(.215,.61,.355,1);
+          transform: rotate(45deg);
+          &:after {
+            bottom: 0;
+            transition: bottom 75ms ease,transform 75ms cubic-bezier(.215,.61,.355,1) .12s;
+            transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg)
+          }
+          &:before {
+            background-color: $white;
+            top: 0;
+            transition: top 75ms ease,opacity 75ms ease .12s;
+            opacity: 0
+          }
+        }
+      }
+  }
+  .logo-outer{
+    height: 31px;
+    img{
+      width: 100%;
+    }
+  }
+  .header-left,.header-right{
+    display: flex;
+    align-items: center;
+    .join-now-btn{
+      padding: 10px 15px;
+      margin-right: 15px;
+      i{
+        font-size: 22px;
+      }
+    }
+  }
+  .country-select{
+    ~ .select2-container--default .select2-selection--single{
+      padding: 11px 35px 11px 15px;
+      border-color: $secondary-color;
+      .language-text{
+        display: none;
+        @media (min-width: 992px) {
+            display: inline-block;
+        }
+      }
+    }
+  }
+}
+nav{
+  ul{
+    margin-top: 0;
+    padding-top: 30px;
+    @media (min-width: 768px) {
+      display: flex;
+      padding: 0 0;
+    }
+    li{
+      position: relative;
+        &.has-submenu{
+          &> a{
+            position: relative;
+            display: flex;
+            i.dropdown-arrow {
+              height: 18px;
+              width: 18px;
+              position: relative;
+              margin-left: auto;
+              &:after{
+                background: transparent;
+                border-left: 2px solid $light-grey2;
+                border-top: 2px solid $light-grey2;
+                color: transparent;
+                content: "";
+                display: inline-block;
+                height: 6px;
+                margin-top: -3px;
+                position: absolute;
+                left: 50%;
+                text-decoration: none;
+                top: 50%;
+                transform: rotate(-135deg);
+                transition: all .25s ease-in-out;
+                width: 6px;
+                margin-left: -3px;
+                @media (min-width: 768px) {
+                  display: none;               
+                }
+              }
+            }
+           
+          
+          }
+          &.submenu-open {
+            &> a{
+              i.dropdown-arrow {
+                &:after{
+                  transform: rotate(45deg);
+                  margin-top: -3px;
+                }
+              }
+            }
+          }
+        }
+      a{
+        font-size: 14px;
+        padding: 12px 20px;
+        color: $base-color;
+        display: block;
+        @media (min-width: 768px) {
+          padding: 24px 10px 24px 0;
+          font-size: 15px;
+        }
+        @media (min-width: 992px) {
+          padding: 24px 30px 24px 0;
+          font-size: 16px;
+        }
+      }
+     
+      &> ul.submenu {
+        display: none;
+        top: 100%;
+        left: 0;
+        z-index: 9;
+        min-width: 150px;
+        right: 0;
+        background: $off-white;
+        padding: 5px 0;
+        @media (min-width: 768px) {
+          display: none;
+          position: absolute;
+          background: $white;
+          padding: initial;
+          border-radius: 0 0 8px 8px;
+          border-top: 1px solid $primary-color;
+          @include box-shadow($dark-shadow);
+          // height: 0;
+          // overflow: hidden;
+          // transition: all .3s ease-out;
+          // visibility: hidden;
+        }
+        li{
+          &:last-child{
+            a{
+              border-radius: 0 0 8px 8px;
+            }            
+          }
+          a{
+            
+            padding: 6px 20px;
+            @media (min-width: 768px) {
+              padding: 8px 15px;
+            }
+            &:hover,&:focus{
+              background-color: $primary-color;
+              color: $white;
+            }
+          }
+        }
+      }
+      // &:hover{
+      //   &> ul.submenu {
+      //     @media (min-width: 768px) {
+      //       display: block;
+      //       // height: 240px;
+      //       visibility: visible;
+      //       top: 100%;
+      //     }
+          
+      //   }
+      // }
+    }
+    
+  }
+  position: fixed;
+  left: -100%;
+  top: 0;
+  z-index: 2;
+  transition: all .3s;
+  padding-bottom: 3rem;
+  background: $white;
+  -ms-box-shadow: 0 1px 15px 0 rgba(0,0,0,.3);
+  -o-box-shadow: 0 1px 15px 0 rgba(0,0,0,.3);
+  box-shadow: 0 1px 15px 0 rgba(0,0,0,.3);
+  bottom: 0;
+  text-align: left;
+  min-width: 230px;
+  overflow-y: auto;
+  .open &{
+    left: 0;
+  }
+  .hamburger-icon{
+    margin-top: 22px;
+    margin-left: 18px;
+  }
+  @media (min-width: 768px) {
+    display: block;
+    position: static;
+    box-shadow: none;
+    background: transparent;
+    padding: initial;
+    min-width: auto;
+    overflow-y: initial;
+  }
+  .join-now-btn{
+      display: block;
+      margin: 30px auto 0 !important;
+      @media (min-width: 768px) {
+        display: none;
+      }
+  }
+}

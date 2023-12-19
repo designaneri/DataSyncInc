@@ -1,0 +1,107 @@
+.card{
+  border-radius: 16px;
+  border: 1px solid $border-color;
+  padding: 1.5rem;
+  background: $white;
+  height: 100%;
+  overflow: hidden;
+  
+  .card-header{
+    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+    position: relative;
+  }
+  h4{
+    text-transform: capitalize;
+  }
+  .card-icon{
+    @include transition(all 0.3s);
+    padding: 1.6rem;
+    background-color: $light-grey;
+    border-radius: 100%;
+    display: inline-block;
+    margin-bottom: 1.6rem;
+    i{
+      font-size: 28px;
+    }
+  }
+  i,img{
+    vertical-align: middle;
+  }
+}
+// alignment of know more
+.service-card{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  @include transition(all 0.3s);
+  cursor: pointer;
+  &:hover{
+    color: $primary-color;
+    @include box-shadow($dark-shadow);
+    border: 1px solid rgba(67, 130, 79, 0.30);
+    .card-icon{
+      background-color: rgba($primary-color, 0.05);
+    }
+    .know-more-link{
+      color: $primary-color;
+      &:after{
+        width: 80px;
+       }
+      i{
+        color: $primary-color;
+        margin-left: 16px;
+      }
+    }
+  }
+}
+
+//insight card
+.insight-card{
+  cursor: pointer;
+  &:hover{
+    color: $primary-color;
+    @include box-shadow($dark-shadow);
+    border: 1px solid rgba(132, 132, 132, 0.30);
+    .read-more-link{
+      color: $base-color;
+      &:after{
+        background: $base-color;
+        width: 77px;
+      }
+      i{
+        color: $base-color;
+        margin-left: 16px;
+      }
+    }
+  }
+}
+.award-win-img{
+  display: grid;
+  
+  grid-template-areas:
+      'first second'
+      'first third';
+  align-items: center;
+  grid-gap: 28px;
+  justify-content: end;
+  grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(2, 220px);
+  }
+  img{
+    max-width: 100%;
+    @media (min-width: 1200px) {
+      max-width: 220px;
+    }
+  }
+}
+.first-img{
+  grid-area: first;
+}
+.second-img{
+  grid-area: second;
+}
+.third-img{
+  grid-area: third;
+}

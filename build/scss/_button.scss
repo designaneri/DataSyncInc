@@ -1,0 +1,84 @@
+button {
+  cursor: pointer;
+
+  &:focus {
+      outline: 0 !important;
+      box-shadow: none !important;
+  }
+
+  &[disabled="disabled"] {
+      cursor: no-drop !important;
+  }
+}
+
+.btn {
+  font-family: 'Roboto', sans-serif;
+  border: 0;
+  cursor: pointer;
+  @include transition(all 0.3s);
+  font-size: 1.6rem;
+  line-height: 1.2;
+  padding: 1.6rem 4rem;   
+  border-radius: 8px;
+  &.btn-small{
+    padding: 0.6rem 1.5rem; 
+    min-height: 34px;  
+  }
+  &.btn-md{
+    padding: 1.2rem 2.4rem; 
+  }
+  &.rounded-btn{
+    border-radius: 24px;
+  }
+}
+.btn-block{
+  width: 100%;
+  display: block;
+}
+.btn-white{
+  @extend .btn;
+  border:1px solid $white;
+  background: transparent;
+  color:$primary-color;
+  /*&:hover,&:focus{
+      background:$white;
+      color: $primary-color;
+  }  */
+  &:hover,&:focus{
+      border-color:$primary-color;
+      background:$primary-color;
+      color: $white;
+  }  
+}
+
+.btn-outline-primary {
+  @extend .btn;
+  border:1px solid $primary-color;
+  background: $white;
+  color: $primary-color;
+  &:hover,&:focus{
+      background:$primary-color;
+      color: $white;
+  }
+}
+
+.btn-primary{
+  @extend .btn;
+  border:1px solid $primary-color;
+  background: $primary-color;
+  color:$white;
+  /*&:hover,&:focus{
+      background:$white;
+      color: $primary-color;
+  }  */
+  &:hover,&:focus{
+      border-color:$primary-color;
+      background:$white;
+      color: $primary-color;
+  }  
+}
+
+.centered-btn-wrap{
+  margin-top: 40px;
+  text-align: center;
+}

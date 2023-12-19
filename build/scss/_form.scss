@@ -1,0 +1,42 @@
+
+.form-group{
+    margin-bottom: 1.2rem;
+}
+.form-control {
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 1.6rem;
+    background-color: transparent;
+    border: 1px solid $base-color;
+    color: $base-color;
+    border-radius: 8px;
+    &:focus {
+        box-shadow: none;
+        border-color: $primary-color;
+    }
+    &::-webkit-input-placeholder {
+        color: $base-color;
+    }
+
+    &::-moz-placeholder {
+        color: $base-color;
+    }
+
+    &:-ms-input-placeholder {
+        color: $base-color;
+    }
+
+    &:-moz-placeholder {
+        color: $base-color;
+    }
+
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px white inset;
+
+        &:hover,
+        &:focus,
+        &:active {
+            -webkit-box-shadow: 0 0 0 30px white inset;
+        }
+    }
+}
